@@ -27,7 +27,7 @@ namespace DefaultNamespace.golem
             if (currentHealth <= 0)
             {
                 PlayDeathEffects();
-                Destroy(this.gameObject,0.5f);
+                Destroy(this.gameObject);
             }
 
         }

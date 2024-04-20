@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6422186b259459d93c1863ca588f203, type: 3}
   m_Name: Spell2
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 25
   speed: 4
   lifeTime: 4
   icon: {fileID: 0}

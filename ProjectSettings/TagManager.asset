@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - golem
+  - wizard
+  - dialog
   layers:
   - Default
   - TransparentFX
