@@ -21,7 +21,12 @@ namespace Character
             
             if (currentHealth <= 0)
             {
+<<<<<<< Updated upstream
                 Destroy(this.gameObject);
+=======
+                anim.SetTrigger("isDeath");
+                Destroy(this.gameObject,1f);
+>>>>>>> Stashed changes
             }
         }
     }
