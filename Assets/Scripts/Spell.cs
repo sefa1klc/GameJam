@@ -1,5 +1,6 @@
 ﻿using System;
 using Character;
+using DefaultNamespace.golem;
 using UnityEngine;
 
 namespace DefaultNamespace
@@ -42,6 +43,11 @@ namespace DefaultNamespace
                     
                 Destroy(this.gameObject);
                 
+            }
+            else if (other.gameObject.CompareTag("golem"))
+            {
+                Golem golem = other.GetComponent<Golem>();
+                golem.TakeDamage(_SpellContainer.damage);
             }
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using DefaultNamespace.Boss;
 using UnityEngine;
 
 namespace Character
@@ -7,6 +8,7 @@ namespace Character
     {
         [SerializeField]private float maxHealth = 50f;
         private float currentHealth;
+        [SerializeField]private lastWizard _lastWizard;
 
         private Animator anim;
             
@@ -27,9 +29,12 @@ namespace Character
             
             if (currentHealth <= 0)
             {
+                _lastWizard.animations();
                 anim.SetTrigger("isDeath");
-                Destroy(this.gameObject,1f);
+                Destroy(gameObject, 1f);
             }
+
         }
+
     }
 }

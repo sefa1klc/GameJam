@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  _SpellContainer: {fileID: 0}
 --- !u!212 &6291644955706508173
 SpriteRenderer:
   m_ObjectHideFlags: 0
