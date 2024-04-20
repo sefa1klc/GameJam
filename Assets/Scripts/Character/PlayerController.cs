@@ -15,6 +15,8 @@ namespace Character
         private Collider2D coll;
         private Animator anim;
 
+        public Vector3 direction;
+
         private void Awake()
         {
             anim = GetComponent<Animator>();
@@ -30,7 +32,9 @@ namespace Character
             {
                 rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
                 // Karakterin yönünü, hareket yönüne otomatik olarak döndürme
-                transform.localScale = new Vector3(Mathf.Sign(moveInput), 1, 1);
+                direction = new Vector3(Mathf.Sign(moveInput), 1, 1);
+                transform.localScale = direction;
+                
             }
             
             // Jumping
