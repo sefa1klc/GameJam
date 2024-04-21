@@ -1,4 +1,5 @@
 ﻿using System;
+using DefaultNamespace.sound;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -39,6 +40,9 @@ namespace DefaultNamespace.Boss
         {
             if (collider2D.gameObject.CompareTag("Player"))
             {
+                FindObjectOfType<SoundManager>().PlayAudioClip("boss"); 
+                FindObjectOfType<SoundManager>().StopAudioClip("Background"); 
+                
                 anim.SetTrigger("isattacking");
             }
         }

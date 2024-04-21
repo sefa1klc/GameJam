@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   speed: 3
-  lifeTime: 5
+  lifeTime: 2
   icon: {fileID: 425229171, guid: 16fc90672c576ac45b9fc597383b480d, type: 3}
   spellradius: 0.32

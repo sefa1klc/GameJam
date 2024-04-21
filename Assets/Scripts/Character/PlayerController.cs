@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using DefaultNamespace.sound;
 using UnityEngine;
 
 namespace Character
@@ -40,6 +41,7 @@ namespace Character
             // Jumping
             if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
             {
+                FindObjectOfType<SoundManager>().StopAudioClip("playerjump"); 
                 //anim.SetBool("isJump",true);
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 isGrounded = false;

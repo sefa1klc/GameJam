@@ -1,6 +1,7 @@
 ﻿using System;
 using Character;
 using DefaultNamespace.golem;
+using DefaultNamespace.sound;
 using UnityEngine;
 
 namespace DefaultNamespace
@@ -41,6 +42,8 @@ namespace DefaultNamespace
             }
             else if (other.gameObject.CompareTag("golem"))
             {
+                
+                FindObjectOfType<SoundManager>().PlayAudioClip("golemhit"); 
                 Golem golem = other.GetComponent<Golem>();
                 golem.TakeDamage(_SpellContainer.damage);
             }

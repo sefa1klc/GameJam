@@ -1,4 +1,5 @@
 ﻿using System;
+using DefaultNamespace.sound;
 using UnityEngine;
 
 namespace DefaultNamespace.golem
@@ -7,23 +8,23 @@ namespace DefaultNamespace.golem
     {
         public ParticleSystem ParticleSystem;
         [SerializeField]private float maxHealth = 50f;
+        [SerializeField] private HealthBar _healthBar;
         private float currentHealth;
 
         private Animator anim;
         private int attackDamage = 25;
-            
 
         private void Awake()
         {
             currentHealth = maxHealth;
+            _healthBar.UpdateHealthBar(maxHealth,currentHealth);
             anim = GetComponent<Animator>();
         }
 
         public void TakeDamage(float damage)
         {
             currentHealth -= damage;
-            Debug.Log(currentHealth);
-
+            _healthBar.UpdateHealthBar(maxHealth,currentHealth);
             if (currentHealth <= 0)
             {
                 PlayDeathEffects();
@@ -34,8 +35,11 @@ namespace DefaultNamespace.golem
         
         private void PlayDeathEffects()
         {
+                FindObjectOfType<SoundManager>().PlayAudioClip("golem"); 
                 // Particle sistemi çalıştır
                 ParticleSystem.Play();
+                FindObjectOfType<golemcounter>().IncreaseEnemyCount();
+                
         }
 
         private void OnTriggerEnter2D(Collider2D other)
